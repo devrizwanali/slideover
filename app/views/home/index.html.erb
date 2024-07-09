@@ -1,0 +1,24 @@
+<div data-controller="slideover">
+  <style>
+    dialog.slideover[open] {
+      animation: slide-in-from-left 250ms forwards ease;
+    }
+
+    @keyframes slide-in-from-left{
+      from {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+  <dialog data-slideover-target="dialog" class="slideover h-full max-h-full m-0 w-96 p-8 backdrop:bg-black/80">
+    <p>This slideover dialog has a groovy backdrop!</p>
+    <button autofocus data-action="slideover#close" class="px-2.5 py-1 bg-blue-500 text-white text-sm rounded">Close</button>
+
+    <div class="my-4">
+      <label for="date">Pick Date</label>
+      <input name="date" id="date" data-controller="flatpickr" class="border rounded-md w-full mt-3 border-gray-200">
+    </div>
+
+  </dialog>
+  <button data-action="slideover#open" class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-1 px-2.5 rounded">Open slideover</button>
+</div>
